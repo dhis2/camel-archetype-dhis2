@@ -18,6 +18,13 @@
         <url>git@github.com:dhis2/camel-archetype-dhis2.git</url>
     </scm>
 
+    <developers>
+        <developer>
+            <name>HISP Centre</name>
+            <email>developers@dhis2.org</email>
+        </developer>
+    </developers>
+
     <licenses>
         <license>
             <name>BSD</name>
