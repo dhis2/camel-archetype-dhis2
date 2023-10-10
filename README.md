@@ -9,13 +9,13 @@ This [Maven archetype](https://maven.apache.org/guides/introduction/introduction
 | fhir          | Include FHIR module in order to integrate with FHIR repositories                             |
 | hawtio        | Include and configure the Hawtio module in order to observe and manage the Camel application |
 
-Run archetype example:
+Running archetype example:
 ```
 mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
 -DarchetypeGroupId=org.hisp.dhis.integration.camel \
--DarchetypeArtifactId=camel-archetype-dhis2  \
--DarchetypeVersion=1.0.0
--DgroupId=org.hisp.dhis.integration.camel  \
+-DarchetypeArtifactId=camel-archetype-dhis2 \
+-DarchetypeVersion=1.0.0 \
+-DgroupId=org.hisp.dhis.integration.camel \
 -Dhawtio=Y \
 -Ddatasonnet=Y \
 -Dfhir=Y \
