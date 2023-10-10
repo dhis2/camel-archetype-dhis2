@@ -18,7 +18,17 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: maven
-      - run: mvn package
+      - run: |
+          mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
+          -DarchetypeGroupId=org.hisp.dhis.integration.camel \
+          -DarchetypeArtifactId=camel-archetype-dhis2 \
+          -DgroupId=org.hisp.dhis.integration.camel \
+          -Dhawtio=Y \
+          -Ddatasonnet=Y \
+          -Dfhir=Y \
+          -Dartemis=Y \
+          -DartifactId=my-camel-dhis2-app \
+          -Dversion=1.0.0-SNAPSHOT && mvn package --file my-camel-dhis2-app/pom.xml
       - name: Publish
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         env:
