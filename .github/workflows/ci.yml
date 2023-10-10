@@ -19,7 +19,7 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - run: |
-          mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
+          mvn clean install && mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
           -DarchetypeGroupId=org.hisp.dhis.integration.camel \
           -DarchetypeArtifactId=camel-archetype-dhis2 \
           -DgroupId=org.hisp.dhis.integration.camel \
