@@ -18,10 +18,8 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: maven
-      - name: Build
-        run: mvn clean install
-      - name: Test
-        run: |
+      - run: mvn clean install
+      - run: |
           cd .. && 
           mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
           -DarchetypeGroupId=org.hisp.dhis.integration.camel \
