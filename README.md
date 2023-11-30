@@ -14,7 +14,7 @@ Running archetype example:
 mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
 -DarchetypeGroupId=org.hisp.dhis.integration.camel \
 -DarchetypeArtifactId=camel-archetype-dhis2 \
--DarchetypeVersion=1.0.2 \
+-DarchetypeVersion=1.0.3 \
 -DgroupId=org.hisp.dhis.integration.camel \
 -Dhawtio=Y \
 -Ddatasonnet=Y \
