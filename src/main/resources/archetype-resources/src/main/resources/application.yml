@@ -4,6 +4,10 @@ server:
   error:
     whitelabel:
       enabled: false
+  servlet:
+    session:
+      cookie:
+        same-site: strict
 
 camel:
   springboot:
