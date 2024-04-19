@@ -1,6 +1,6 @@
 ## Camel Archetype DHIS2
 
-This [Maven archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) is used to create a template [Apache Camel 3](https://camel.apache.org/) application powered by [Spring Boot](https://spring.io/projects/spring-boot/) that uses the [DHIS2 component](https://camel.apache.org/components/4.0.x/dhis2-component.html). Besides the standard archetype properties, this archetype has other mandatory properties that correspond to modules which can be included or excluded from the template by setting `Y` or `N`. These additional properties are:
+This [Maven archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html) is used to create a template [Apache Camel 4](https://camel.apache.org/) application powered by [Spring Boot](https://spring.io/projects/spring-boot/) that uses the [DHIS2 component](https://camel.apache.org/components/4.0.x/dhis2-component.html). Besides the standard archetype properties, this archetype has other mandatory properties that correspond to modules which can be included or excluded from the template by setting `Y` or `N`. These additional properties are:
 
 | Property name | Description                                                                                  |
 |---------------|----------------------------------------------------------------------------------------------|
