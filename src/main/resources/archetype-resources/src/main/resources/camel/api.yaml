@@ -1,6 +1,5 @@
 - rest:
     get:
-    - id: "orgUnits"
-      path: "/orgUnits"
+    - path: "/orgUnits"
       produces: "application/json"
       to: "direct:orgUnits"
