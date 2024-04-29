@@ -11,7 +11,7 @@ public class HelloWorldRouteBuilder extends RouteBuilder {
   @Override
   public void configure() throws Exception {
 
-    from("servlet:orgUnits?muteException=true")
+    from("direct:orgUnits")
         .to(
             "dhis2://get/collection?path=organisationUnits&arrayName=organisationUnits&client=${symbol_pound}dhis2Client")
         .marshal()

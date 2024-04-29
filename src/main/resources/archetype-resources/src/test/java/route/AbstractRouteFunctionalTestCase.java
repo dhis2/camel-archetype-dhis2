@@ -51,7 +51,7 @@ public class AbstractRouteFunctionalTestCase {
   }
 
   private static GenericContainer<?> newDhis2Container(PostgreSQLContainer<?> postgreSqlContainer) {
-    return new GenericContainer<>(DockerImageName.parse("dhis2/core:2.40.1"))
+    return new GenericContainer<>(DockerImageName.parse("dhis2/core:2.40.3"))
         .dependsOn(postgreSqlContainer)
         .withClasspathResourceMapping("dhis.conf", "/opt/dhis2/dhis.conf", BindMode.READ_WRITE)
         .withNetwork(postgreSqlContainer.getNetwork())
@@ -68,7 +68,7 @@ public class AbstractRouteFunctionalTestCase {
       if (!file.exists()) {
         System.out.println("Downloading database dump...");
         FileUtils.copyURLToFile(
-            new URL("https://databases.dhis2.org/sierra-leone/2.40.1/dhis2-db-sierra-leone.sql.gz"),
+            new URL("https://databases.dhis2.org/sierra-leone/2.40.3/dhis2-db-sierra-leone.sql.gz"),
             file);
       }
       POSTGRESQL_CONTAINER = newPostgreSqlContainer();
