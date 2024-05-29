@@ -20,7 +20,7 @@ camel:
       context-path: "/api/*"
 
 dhis2:
-  apiUrl: https://play.dhis2.org/dev/api
+  apiUrl: https://play.im.dhis2.org/dev/api
   username: admin
   password: district
 
