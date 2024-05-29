@@ -33,7 +33,6 @@ public class DefaultSecurityConfig {
             authorizeHttpRequests(request -> request.requestMatchers("/management/**", "/login", "/logout").authenticated()).
             formLogin(Customizer.withDefaults()).headers(headers -> headers.frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)).
             csrf(csrf -> csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()).csrfTokenRequestHandler(new SpaCsrfTokenRequestHandler())).
-            formLogin(Customizer.withDefaults()).
             httpBasic(Customizer.withDefaults()).
             addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class).
             build();
