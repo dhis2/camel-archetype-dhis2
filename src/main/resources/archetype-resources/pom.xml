@@ -156,13 +156,11 @@
             <version>2.33.0</version>
         </dependency>
         #end
-#*    *##if(${datasonnet} == "Y")
 #*    *#<dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-datasonnet-starter</artifactId>
         </dependency>
-        #end
-#*    *#<dependency>
+        <dependency>
             <groupId>org.apache.camel.springboot</groupId>
             <artifactId>camel-jackson-starter</artifactId>
         </dependency>
