@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 9070
   address: 127.0.0.1
   error:
     whitelabel:
@@ -56,3 +56,10 @@ hawtio:
 logging:
   file:
     name: ${artifactId}.log
+
+#if(${openHim} == "Y")
+openhim:
+  url: https://localhost:8080
+  username: root@openhim.org
+  password: openhim-password
+#end

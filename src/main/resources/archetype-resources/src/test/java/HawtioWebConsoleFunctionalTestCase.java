@@ -8,9 +8,6 @@ import static io.restassured.RestAssured.given;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.BeforeEach;
-#if(${hawtio} == "N")
-import org.junit.jupiter.api.Disabled;
-#end
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -20,9 +17,6 @@ import org.springframework.test.context.ActiveProfiles;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
-#if(${hawtio} == "N")
-@Disabled("Hawtio was excluded when archetype was generated")
-#end
 public class HawtioWebConsoleFunctionalTestCase {
   @LocalServerPort private int serverPort;
 

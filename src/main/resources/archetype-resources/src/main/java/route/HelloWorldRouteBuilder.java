@@ -12,8 +12,7 @@ public class HelloWorldRouteBuilder extends RouteBuilder {
   public void configure() throws Exception {
 
     from("direct:orgUnits")
-        .to(
-            "dhis2://get/collection?path=organisationUnits&arrayName=organisationUnits&client=${symbol_pound}dhis2Client")
+        .to("dhis2://get/collection?path=organisationUnits&arrayName=organisationUnits&client=${symbol_pound}dhis2Client")
         .marshal()
         .json();
   }
