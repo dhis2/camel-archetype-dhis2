@@ -16,7 +16,7 @@ This [Maven archetype](https://maven.apache.org/guides/introduction/introduction
 mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
 -DarchetypeGroupId=org.hisp.dhis.integration.camel \
 -DarchetypeArtifactId=camel-archetype-dhis2 \
--DarchetypeVersion=1.0.4 \
+-DarchetypeVersion=2.0.0-SNAPSHOT \
 -DgroupId=org.hisp.dhis.integration.camel \
 -Dhawtio=Y \
 -Dfhir=Y \
@@ -31,7 +31,7 @@ mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
 mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate ^
 -DarchetypeGroupId=org.hisp.dhis.integration.camel ^
 -DarchetypeArtifactId=camel-archetype-dhis2 ^
--DarchetypeVersion=1.0.4 ^
+-DarchetypeVersion=2.0.0-SNAPSHOT ^
 -DgroupId=org.hisp.dhis.integration.camel ^
 -Dhawtio=Y ^
 -Dfhir=Y ^
