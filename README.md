@@ -11,7 +11,7 @@ This [Maven archetype](https://maven.apache.org/guides/introduction/introduction
 
 ### Running Archetype Example
 
-#### Unix Shell
+#### POSIX Shell
 ```
 mvn -B org.apache.maven.plugins:maven-archetype-plugin:3.2.1:generate \
 -DarchetypeGroupId=org.hisp.dhis.integration.camel \
