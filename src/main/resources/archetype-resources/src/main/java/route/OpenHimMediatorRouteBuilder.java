@@ -21,7 +21,7 @@ public class OpenHimMediatorRouteBuilder extends RouteBuilder {
   @Override
   public void configure() throws Exception {
     //FIXME: remove this line and all references to `selfSignedHttpClientConfigurer` once
-    // default self-signed TLS certificate returned by OpenHIM core is replaced with a certifcate issued by a CA.
+    // default self-signed TLS certificate returned by OpenHIM core is replaced with a certificate issued by a CA.
     getContext()
         .getRegistry()
         .bind("selfSignedHttpClientConfigurer", new SelfSignedHttpClientConfigurer());
