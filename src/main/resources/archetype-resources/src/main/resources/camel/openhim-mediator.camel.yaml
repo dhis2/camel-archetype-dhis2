@@ -1,0 +1,58 @@
+- beans:
+    - name: selfSignedHttpClientConfigurer
+      type: "#class:${package}.security.SelfSignedHttpClientConfigurer"
+
+- route:
+    id: openHimRegisterRoute
+    from:
+      uri: timer://registerOpenHimMediator?repeatCount=1
+      steps:
+        - transform:
+            datasonnet:
+              source: null
+              expression: resource:classpath:openhim/mediator-config.ds
+              resultType: java.lang.String
+              bodyMediaType: application/x-java-object
+              outputMediaType: application/json
+        - setHeader:
+            name: Content-Type
+            constant: "application/json"
+        - log: "Registering mediator with OpenHIM..."
+        - to:
+            uri: "{{openhim.url}}/mediators"
+            parameters:
+              httpClientConfigurer: "#selfSignedHttpClientConfigurer"
+              authUsername: "{{openhim.username}}"
+              authPassword: "{{openhim.password}}"
+              authenticationPreemptive: true
+              httpMethod: POST
+        - log: "Registered mediator with OpenHIM"
+
+- route:
+    id: openHimHeartbeatRoute
+    from:
+      uri: timer://heartbeatOpenHimMediator?delay=10000&fixedRate=true&period=5000
+      steps:
+        - setProperty:
+            name: uptime
+            expression:
+              groovy: "camelContext.getUptime().get(java.time.temporal.ChronoUnit.SECONDS)"
+        - transform:
+            datasonnet:
+              source: null
+              expression: resource:classpath:openhim/heartbeat.ds
+              resultType: java.lang.String
+              bodyMediaType: application/x-java-object
+              outputMediaType: application/json
+        - setHeader:
+            name: Content-Type
+            constant: "application/json"
+        - to:
+            uri: "{{openhim.url}}/mediators/urn:mediator:${artifactId}/heartbeat"
+            parameters:
+              httpClientConfigurer: "#selfSignedHttpClientConfigurer"
+              authUsername: "{{openhim.username}}"
+              authPassword: "{{openhim.password}}"
+              authenticationPreemptive: true
+              httpMethod: POST
+        - log: "Sent heartbeat to OpenHIM"
