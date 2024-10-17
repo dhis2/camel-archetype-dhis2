@@ -11,7 +11,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class HelloWorldRouteBuilderFunctionalTestCase extends AbstractRouteFunctionalTestCase {
+public class HelloWorldRouteFunctionalTestCase extends AbstractRouteFunctionalTestCase {
   @LocalServerPort private int serverPort;
 
   @Test

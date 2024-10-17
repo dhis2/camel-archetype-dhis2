@@ -1,0 +1,6 @@
+- route:
+    id: hello-world-route
+    from:
+      uri: direct:orgUnits
+      steps:
+        - to: dhis2://get/collection?path=organisationUnits&arrayName=organisationUnits&client=${symbol_pound}dhis2Client

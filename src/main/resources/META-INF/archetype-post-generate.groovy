@@ -9,8 +9,7 @@ if (hawtioOption.equalsIgnoreCase("n")) {
 
 if (openHimOption.equalsIgnoreCase("n")) {
     assert new File(rootDir, "src/main/resources/openhim").deleteDir()
-    assert new File(rootDir, "src/main/java/" + javaPackage + "/route/OpenHimMediatorRouteBuilder.java").delete()
-    assert new File(rootDir, "src/test/java/" + javaPackage + "/route/OpenHimMediatorRouteBuilderTestCase.java").delete()
+    assert new File(rootDir, "src/main/resources/camel/openhim-mediator.camel.yaml").delete()
+    assert new File(rootDir, "src/test/java/" + javaPackage + "/route/OpenHimMediatorRouteTestCase.java").delete()
     assert new File(rootDir, "src/main/java/" + javaPackage + "/security/SelfSignedHttpClientConfigurer.java").delete()
-    assert new File(rootDir, "src/main/java/" + javaPackage + "/UptimeExpression.java").delete()
 }

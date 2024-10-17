@@ -1,4 +1,5 @@
 - rest:
+    bindingMode: json
     get:
     - path: "/orgUnits"
       produces: "application/json"
